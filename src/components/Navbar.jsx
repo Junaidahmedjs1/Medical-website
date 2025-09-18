@@ -21,7 +21,6 @@ const Navbar = () => {
             <li><Link to="/about" className="hover:text-blue-600 cursor-pointer">About</Link></li>
             <li><Link to="/services" className="hover:text-blue-600 cursor-pointer">Services</Link></li>
             <li><Link to="/team" className="hover:text-blue-600 cursor-pointer">Team Members</Link></li>
-            <li><Link to="/doctor" className="hover:text-blue-600 cursor-pointer">Doctor Profile</Link></li>
             <li><Link to="/contact" className="hover:text-blue-600 cursor-pointer">Contact</Link></li>
           </ul>
 
