@@ -6,6 +6,9 @@ import {
   FileText,
   Stethoscope,
   HeartPulse,
+  CalendarDays,
+  Mail,
+  Send,
 } from "lucide-react";
 import CTASection from "../components/CtaSection";
 import Testonomials from "../components/Testonomials";
@@ -60,6 +63,27 @@ const awards = [
   "/award-6.svg",
 ];
 
+const articles = [
+  {
+    image: "/blog-2.jpg",
+    title: "The Medical Minute Quick Tips for Better Living",
+    date: "11 March 2025",
+    category: "Event",
+  },
+  {
+    image: "/blog-1.jpg",
+    title: "Healthy Habits for Busy Professionals",
+    date: "11 March 2025",
+    category: "Event",
+  },
+  {
+    image: "/blog-3.jpg",
+    title: "Ask the Doctor Real Answers, Real Care",
+    date: "11 March 2025",
+    category: "Event",
+  },
+];
+
 const Home = () => {
   return (
     <>
@@ -103,23 +127,6 @@ const Home = () => {
             alt="Doctor"
             className="w-full max-w-sm md:max-w-md object-contain"
           />
-        </div>
-        <div className="ul-sidebar-footer">
-          <span className="ul-sidebar-footer-title">Follow us</span>
-          <div className="ul-sidebar-footer-social">
-            <a href="#">
-              <i className="flaticon-facebook" />
-            </a>
-            <a href="#">
-              <i className="flaticon-twitter" />
-            </a>
-            <a href="#">
-              <i className="flaticon-instagram" />
-            </a>
-            <a href="#">
-              <i className="flaticon-youtube" />
-            </a>
-          </div>
         </div>
       </section>
 
@@ -255,13 +262,13 @@ const Home = () => {
       <section className="relative bg-white py-16 overflow-hidden">
         {/* Left Background Image */}
         <img
-          src="/qualification-vector-1.svg" 
+          src="/qualification-vector-1.svg"
           alt="Doctor Illustration"
           className="absolute w-[30%] top-60 -left-10"
         />
         {/* Right Background Image */}
         <img
-          src="/qualification-vector-2.svg " 
+          src="/qualification-vector-2.svg "
           alt="Doctor Illustration"
           className="absolute right-0 top-0 "
         />
@@ -299,15 +306,15 @@ const Home = () => {
           </div>
 
           {/* Awards Row */}
-          <div className="bg-gray-100 rounded-xl px-6 py-6 flex flex-wrap justify-between items-center gap-4">
+          <div className="bg-gray-100 rounded-xl px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Awards Icons */}
-            <div className="flex flex-wrap items-center gap-[3rem] ">
+            <div className="grid grid-cols-3 gap-6 md:flex md:flex-wrap md:items-center md:gap-[3rem]">
               {awards.map((award, idx) => (
                 <img
                   key={idx}
                   src={award}
                   alt={`Award ${idx + 1}`}
-                  
+                  className="w-20 h-auto mx-auto"
                 />
               ))}
             </div>
@@ -319,7 +326,230 @@ const Home = () => {
           </div>
         </div>
       </section>
-<Testonomials />
+      <Testonomials />
+      <section className="bg-[#041c33] mx-auto flex flex-col md:flex-row items-center justify-between py-12 px-6 gap-10">
+        {/* LEFT TEXT */}
+        <div className="flex-1">
+          <h1 className="flex rounded-full items-center md:justify-start gap-3 text-2xl md:text-3xl font-bold text-[#0749e2]">
+            <Heart size={30} fill="#0749e2" color="#0749e2" />
+            Your Health, Your Convenience
+          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white leading-snug mt-4">
+            Consult Your Doctor Online — <br />
+            Anytime, Anywhere
+          </h1>
+          <p className="text-sm text-[#a8b8bf] max-w-lg mt-4">
+            Say goodbye to long queues and unnecessary travel. With our secure
+            video consultation service, you can now talk to experienced doctors
+            from the comfort of your home.
+          </p>
+
+          {/* Points */}
+          <div className="mt-4 space-y-3">
+            <h2 className="text-white flex gap-2 items-center">
+              <CircleChevronRight color="white" fill="#0d6dfd" size={20} />
+              Speak with certified specialists in real time
+            </h2>
+            <h2 className="text-white flex gap-2 items-center">
+              <CircleChevronRight color="white" fill="#0d6dfd" size={20} />
+              Easy appointment booking via mobile or web
+            </h2>
+            <h2 className="text-white flex gap-2 items-center">
+              <CircleChevronRight color="white" fill="#0d6dfd" size={20} />
+              Private, secure, and confidential video calls
+            </h2>
+            <h2 className="text-white flex gap-2 items-center">
+              <CircleChevronRight color="white" fill="#0d6dfd" size={20} />
+              Available 7 days a week, including evenings
+            </h2>
+          </div>
+
+          {/* Button */}
+          <button className="text-white flex gap-2 items-center bg-[#0d6dfd] hover:bg-lime-300 hover:text-black font-semibold px-4 py-3 rounded-md shadow mt-6">
+            BOOK VIDEO CONSULTATION <MoveUpRight size={16} />
+          </button>
+        </div>
+
+        {/* RIGHT IMAGES */}
+        <div className="flex-1 relative flex justify-center items-center">
+          {/* Background image */}
+          <img
+            src="/video-call-1.png"
+            alt="Doctor Background"
+            className="w-64 md:w-80 object-contain rounded-xl shadow-lg"
+          />
+          {/* Foreground image (overlapped) */}
+          <img
+            src="/video-call-2.png"
+            alt="Doctor Foreground"
+            className="w-48 md:w-64 object-contain rounded-xl shadow-xl absolute -bottom-6 -right-6"
+          />
+        </div>
+      </section>
+      <section className="relative w-full bg-white py-12 px-6 md:px-16 lg:px-24 flex flex-col items-center gap-8 overflow-hidden">
+        {/* Background Images */}
+        <img
+          src="/blog-bg.png"
+          alt="Background Left"
+          className="hidden md:block absolute left-0 top-0  w-auto object-contain opacity-5 pointer-events-none"
+        />
+        <img
+          src="/blog-vector.svg"
+          alt="Background Right"
+          className="hidden md:block absolute right-0 bottom-0 h-full w-auto object-contain opacity-20 pointer-events-none"
+        />
+
+        {/* Title */}
+        <div>
+          <h1 className="flex items-center gap-2 text-blue-600 border px-4 py-2 rounded-full text-lg font-medium mx-auto relative z-10">
+            <Heart className="text-[#0d6dfd]" fill="#0d6dfd" color="#0d6dfd" />
+            Doctor's Blog
+          </h1>
+        </div>
+
+        {/* Articles */}
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col">
+                {/* Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-52 w-full object-cover"
+                />
+
+                {/* Content */}
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="font-semibold text-lg text-gray-900">
+                    {item.title}
+                  </h3>
+
+                  {/* Meta info */}
+                  <div className="flex items-center gap-6 text-gray-500 text-sm mt-3">
+                    <span className="flex items-center gap-2">
+                      {" "}
+                      <CalendarDays size={13} />
+                      {item.date}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Mail size={13} />
+                      {item.category}
+                    </span>
+                  </div>
+
+                  {/* Button */}
+                  <div className="mt-auto pt-6">
+                    <button className="w-full bg-[#041c33] hover:bg-blue-600 text-white  font-medium py-3 rounded-b-xl flex items-center justify-center gap-2 transition">
+                      READ MORE <MoveUpRight size={16} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative w-full bg-white py-12 px-6 md:px-16 lg:px-24">
+  {/* Background Images */}
+  <img
+    src="/blog-vector.svg"
+    alt="Background Left"
+    className="hidden z-10 md:block absolute left-0 top-0 w-auto object-contain opacity-50 pointer-events-none"
+  />
+  <img
+    src="/blog-vector-2.svg"
+    alt="Background Right"
+    className=" md:block absolute right-0 bottom-0  w-auto object-contain opacity-100 pointer-events-none"  
+  />
+
+  <div className="max-w-7xl mx-auto">
+    {/* Heading */}
+    <div className="flex flex-col items-start gap-3 mb-10">
+      <h1 className="flex items-center gap-2 text-blue-600 border px-4 py-2 rounded-full text-lg font-medium">
+        <Heart className="text-blue-600" fill="#0d6dfd" />
+        Appointment
+      </h1>
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+        Apply for Appointment
+      </h2>
+    </div>
+
+    {/* Grid Layout */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Google Map */}
+      <div className="w-full z-10 h-80 rounded-xl overflow-hidden shadow-md">
+        <iframe
+          title="clinic-location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8863945360146!2d90.42256891498222!3d23.81033138456126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77ab2c5b8e7%3A0xabc57d5e7b67c1ec!2sBRAC%20University!5e0!3m2!1sen!2sbd!4v1671234567890"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      {/* Appointment Form */}
+      <form className="bg-white p-8 rounded-xl shadow-lg flex flex-col gap-6">
+        {/* Fields */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+          />
+          <input
+            type="date"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+          />
+          <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
+            <option disabled selected>
+              Select Doctor
+            </option>
+            <option>Dr. John Doe</option>
+            <option>Dr. Jane Smith</option>
+          </select>
+          <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
+            <option disabled selected>
+              Select Treatment
+            </option>
+            <option>Cardiology</option>
+            <option>Dermatology</option>
+            <option>Neurology</option>
+          </select>
+        </div>
+
+        {/* Terms */}
+        <label className="flex items-center gap-2 text-sm text-gray-600">
+          <input
+            type="checkbox"
+            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+          />
+          I agree to the terms and conditions
+        </label>
+
+        {/* Button */}
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md flex items-center justify-center gap-2 transition">
+          Appointment Now <Send size={18} />
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 
     </>
   );

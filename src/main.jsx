@@ -8,6 +8,7 @@ import Services from "./pages/Services"
 import TeamMembers from "./pages/TeamMembers";
 import DoctorProfile from "./pages/DoctorProfile";
 import Contact from "./pages/Contact";
+import ServicesDetails from './pages/ServicesDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,12 +32,16 @@ const router = createBrowserRouter([
         element: <TeamMembers />,
       },
       {
-        path:"doctor",
+        path: "doctor/:id",
         element:<DoctorProfile/>
       },
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "services-details",
+        element: <ServicesDetails />,
       },
       
     ],
