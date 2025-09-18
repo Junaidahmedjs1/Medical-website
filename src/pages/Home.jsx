@@ -11,7 +11,7 @@ import {
   Send,
 } from "lucide-react";
 import CtaSection from "../components/CtaSection";
-import Testonomials from "../components/Testonomials";
+import Testimonials from "../components/Testimonials";
 
 const services = [
   {
@@ -326,7 +326,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Testonomials />
+      <Testimonials />
       <section className="bg-[#041c33] mx-auto flex flex-col md:flex-row items-center justify-between py-12 px-6 gap-10">
         {/* LEFT TEXT */}
         <div className="flex-1">
@@ -454,103 +454,102 @@ const Home = () => {
       </section>
 
       <section className="relative w-full bg-white py-12 px-6 md:px-16 lg:px-24">
-  {/* Background Images */}
-  <img
-    src="/blog-vector.svg"
-    alt="Background Left"
-    className="hidden z-10 md:block absolute left-0 top-0 w-auto object-contain opacity-50 pointer-events-none"
-  />
-  <img
-    src="/blog-vector-2.svg"
-    alt="Background Right"
-    className=" md:block absolute right-0 bottom-0  w-auto object-contain opacity-100 pointer-events-none"  
-  />
+        {/* Background Images */}
+        <img
+          src="/blog-vector.svg"
+          alt="Background Left"
+          className="hidden z-10 md:block absolute left-0 top-0 w-auto object-contain opacity-50 pointer-events-none"
+        />
+        <img
+          src="/blog-vector-2.svg"
+          alt="Background Right"
+          className=" md:block absolute right-0 bottom-0  w-auto object-contain opacity-100 pointer-events-none"
+        />
 
-  <div className="max-w-7xl mx-auto">
-    {/* Heading */}
-    <div className="flex flex-col items-start gap-3 mb-10">
-      <h1 className="flex items-center gap-2 text-blue-600 border px-4 py-2 rounded-full text-lg font-medium">
-        <Heart className="text-blue-600" fill="#0d6dfd" />
-        Appointment
-      </h1>
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-        Apply for Appointment
-      </h2>
-    </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="flex flex-col items-start gap-3 mb-10">
+            <h1 className="flex items-center gap-2 text-blue-600 border px-4 py-2 rounded-full text-lg font-medium">
+              <Heart className="text-blue-600" fill="#0d6dfd" />
+              Appointment
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Apply for Appointment
+            </h2>
+          </div>
 
-    {/* Grid Layout */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      {/* Google Map */}
-      <div className="w-full z-10 h-80 rounded-xl overflow-hidden shadow-md">
-        <iframe
-          title="clinic-location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8863945360146!2d90.42256891498222!3d23.81033138456126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77ab2c5b8e7%3A0xabc57d5e7b67c1ec!2sBRAC%20University!5e0!3m2!1sen!2sbd!4v1671234567890"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* Google Map */}
+            <div className="w-full z-10 h-80 rounded-xl overflow-hidden shadow-md">
+              <iframe
+                title="clinic-location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.8863945360146!2d90.42256891498222!3d23.81033138456126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77ab2c5b8e7%3A0xabc57d5e7b67c1ec!2sBRAC%20University!5e0!3m2!1sen!2sbd!4v1671234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-      {/* Appointment Form */}
-      <form className="bg-white p-8 rounded-xl shadow-lg flex flex-col gap-6">
-        {/* Fields */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
-          />
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
-          />
-          <input
-            type="text"
-            placeholder="Phone Number"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
-          />
-          <input
-            type="date"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
-          />
-          <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
-            <option disabled selected>
-              Select Doctor
-            </option>
-            <option>Dr. John Doe</option>
-            <option>Dr. Jane Smith</option>
-          </select>
-          <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
-            <option disabled selected>
-              Select Treatment
-            </option>
-            <option>Cardiology</option>
-            <option>Dermatology</option>
-            <option>Neurology</option>
-          </select>
+            {/* Appointment Form */}
+            <form className="bg-white p-8 rounded-xl shadow-lg flex flex-col gap-6">
+              {/* Fields */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+                />
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+                />
+                <input
+                  type="date"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+                />
+                <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
+                  <option disabled selected>
+                    Select Doctor
+                  </option>
+                  <option>Dr. John Doe</option>
+                  <option>Dr. Jane Smith</option>
+                </select>
+                <select className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm bg-white focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none">
+                  <option disabled selected>
+                    Select Treatment
+                  </option>
+                  <option>Cardiology</option>
+                  <option>Dermatology</option>
+                  <option>Neurology</option>
+                </select>
+              </div>
+
+              {/* Terms */}
+              <label className="flex items-center gap-2 text-sm text-gray-600">
+                <input
+                  type="checkbox"
+                  className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                />
+                I agree to the terms and conditions
+              </label>
+
+              {/* Button */}
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md flex items-center justify-center gap-2 transition">
+                Appointment Now <Send size={18} />
+              </button>
+            </form>
+          </div>
         </div>
-
-        {/* Terms */}
-        <label className="flex items-center gap-2 text-sm text-gray-600">
-          <input
-            type="checkbox"
-            className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-          />
-          I agree to the terms and conditions
-        </label>
-
-        {/* Button */}
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg shadow-md flex items-center justify-center gap-2 transition">
-          Appointment Now <Send size={18} />
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
+      </section>
     </>
   );
 };

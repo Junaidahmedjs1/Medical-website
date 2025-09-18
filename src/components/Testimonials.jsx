@@ -4,7 +4,7 @@ import { MoveUpRight, MoveUpLeft } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const testimonials = [
+const testimonialsdata= [
   {
     name: "Kathryn Murphy",
     title: "Medical Assistant",
@@ -42,7 +42,7 @@ const testimonials = [
   },
 ];
 
-const TestimonialsSection = () => {
+const Testimonials = () => {
   return (
     <section className="bg-gray-100 py-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -128,4 +128,4 @@ const TestimonialsSection = () => {
   );
 };
 
-export default TestimonialsSection;
+export default Testimonials;
