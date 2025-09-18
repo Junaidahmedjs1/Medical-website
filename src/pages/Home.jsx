@@ -2,6 +2,7 @@ import React from "react";
 import {
   Heart,
   MoveUpRight,
+  MoveUpLeft,
   CircleChevronRight,
   FileText,
   Stethoscope,
@@ -10,8 +11,10 @@ import {
   Mail,
   Send,
 } from "lucide-react";
-import CtaSection from "../components/CtaSection";
-import Testimonials from "../components/Testimonials";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const services = [
   {
@@ -81,6 +84,43 @@ const articles = [
     title: "Ask the Doctor Real Answers, Real Care",
     date: "11 March 2025",
     category: "Event",
+  },
+];
+const testimonialsdata = [
+  {
+    name: "Kathryn Murphy",
+    title: "Medical Assistant",
+    message:
+      "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo",
+    image: "/reviewer-1.jpg",
+  },
+  {
+    name: "Kathryn Murphy",
+    title: "Medical Assistant",
+    message:
+      "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo",
+    image: "/reviewer-1.jpg",
+  },
+  {
+    name: "Kathryn Murphy",
+    title: "Medical Assistant",
+    message:
+      "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo",
+    image: "/reviewer-1.jpg",
+  },
+  {
+    name: "Kathryn Murphy",
+    title: "Medical Assistant",
+    message:
+      "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo",
+    image: "/reviewer-1.jpg",
+  },
+  {
+    name: "Kathryn Murphy",
+    title: "Medical Assistant",
+    message:
+      "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo",
+    image: "/reviewer-1.jpg",
   },
 ];
 
@@ -257,7 +297,58 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <CtaSection />
+
+      {/* CTA Section */}
+      <section
+        className="relative w-full bg-center bg-cover py-12 px-6 md:px-16 lg:px-24"
+        style={{ backgroundImage: "url('/cta-bg.jpg')" }}>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#0e273e] opacity-90"></div>
+
+        {/* Content */}
+        <div className="relative flex  flex-col md:flex-row justify-between items-center md:items-start gap-6 text-white">
+          {/* Left Content */}
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <button className="flex items-center gap-2 border text-lime-200 border-lime-200 bg-[#123] px-4 py-2 rounded-full text-sm font-medium">
+              <Heart className="text-lime-200" fill="#a3e635" />
+              Do You Need Emergency Care
+            </button>
+
+            <h2 className="text-2xl md:text-4xl font-bold text-center md:text-left">
+              Do You Have Health Problems
+            </h2>
+          </div>
+
+          {/* Right Button */}
+          <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-medium shadow-md">
+            I NEED HELP →
+          </button>
+        </div>
+
+        {/* Carousel Section */}
+        <div className="w-full py-10">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={30}
+            slidesPerView={10}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={false}
+            navigation={false}
+            className="w-full max-w-5xl mx-auto">
+            {/* Repeat same slide multiple times */}
+            {[...Array(20)].map((_, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src="/client-logo.svg"
+                  alt="Client Logo"
+                  className="w-full h-[30px] opacity-70 transition duration-300 hover:opacity-100 hover:brightness-0 hover:invert hover:hue-rotate-180"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
 
       <section className="relative bg-white py-16 overflow-hidden">
         {/* Left Background Image */}
@@ -326,7 +417,90 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Testimonials />
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-100 py-16 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          {/* Header */}
+          <div className="mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1 text-sm text-blue-600 border border-blue-300 rounded-full">
+              💙 Client's Testimonials
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-4">
+              Clients Feedbacks
+            </h2>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="absolute top-6 right-8 z-20 flex gap-3">
+            <button className="prev-btn h-10 w-10 flex items-center justify-center rounded-full border text-black hover:bg-gray-300 transition">
+              <MoveUpLeft className="w-5 h-5" />
+            </button>
+            <button className="next-btn h-10 w-10 flex items-center justify-center rounded-full border text-black hover:bg-gray-300 transition">
+              <MoveUpRight className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Swiper */}
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={3}
+            loop={true}
+            centeredSlides={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            navigation={{
+              nextEl: ".next-btn",
+              prevEl: ".prev-btn",
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}>
+            {testimonialsdata.map((item, index) => (
+              <SwiperSlide key={index}>
+                {({ isActive }) => (
+                  <div
+                    className={`flex flex-col items-center transition-all duration-500 ${
+                      isActive ? "opacity-100 scale-100" : "opacity-40 scale-95"
+                    }`}>
+                    {/* Blue Profile Bar */}
+                    <div
+                      className={`flex items-center gap-4 px-6 py-3 z-10 rounded-full shadow-md transition-all ${
+                        isActive
+                          ? "bg-blue-600 text-white"
+                          : "bg-gray-200 text-gray-400"
+                      }`}>
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-10 h-10 rounded-full border-2 border-white"
+                      />
+                      <div className="text-left">
+                        <p className="text-sm font-semibold">{item.name}</p>
+                        <p className="text-xs">{item.title}</p>
+                      </div>
+                    </div>
+
+                    {/* White Message Card */}
+                    <div className="bg-white rounded-xl p-6 shadow-sm -mt-4 text-center">
+                      <p
+                        className={`text-sm leading-relaxed transition-all ${
+                          isActive ? "text-gray-700" : "text-gray-400"
+                        }`}>
+                        {item.message}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
       <section className="bg-[#041c33] mx-auto flex flex-col md:flex-row items-center justify-between py-12 px-6 gap-10">
         {/* LEFT TEXT */}
         <div className="flex-1">
