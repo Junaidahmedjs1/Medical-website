@@ -4,7 +4,7 @@ import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
 
-const CTASection = () => {
+const CtaSection = () => {
   return (
     <>
       {/* CTA Section */}
@@ -62,4 +62,4 @@ const CTASection = () => {
   );
 };
 
-export default CTASection;
+export default CtaSection;

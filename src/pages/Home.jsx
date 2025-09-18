@@ -10,7 +10,7 @@ import {
   Mail,
   Send,
 } from "lucide-react";
-import CTASection from "../components/CtaSection";
+import CtaSection from "../components/CtaSection";
 import Testonomials from "../components/Testonomials";
 
 const services = [
@@ -257,7 +257,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-      <CTASection />
+      <CtaSection />
 
       <section className="relative bg-white py-16 overflow-hidden">
         {/* Left Background Image */}
