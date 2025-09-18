@@ -1,7 +1,6 @@
 import { Heart } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 
 const CtaSection = () => {
@@ -19,7 +18,7 @@ const CtaSection = () => {
           {/* Left Content */}
           <div className="flex flex-col items-center md:items-start gap-4">
             <button className="flex items-center gap-2 border text-lime-200 border-lime-200 bg-[#123] px-4 py-2 rounded-full text-sm font-medium">
-              <Heart className="text-lime-200" fill="oklch(0.87 0.12 130.8)" />
+              <Heart className="text-lime-200" fill="#a3e635" />
               Do You Need Emergency Care
             </button>
 
